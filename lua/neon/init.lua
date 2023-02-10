@@ -183,19 +183,20 @@ local function set_groups()
         -- TreeSitter highlight groups
         TSComment = {fg = c.gray, bg = c.none, style = cfg.italic_comment}, -- For comment blocks.
         TSConditional = {fg = c.light_blue, style = cfg.italic_keyword}, -- For keywords related to conditionnals.
-        TSKeyword = {fg = c.blue, style = cfg.italic_keyword}, -- For keywords that don't fall in previous categories.
+        ['@keyword'] = {fg = c.blue, style = cfg.italic_keyword}, -- For keywords that don't fall in previous categories.
+        ['@type.qualifier'] = {fg = c.blue, style = cfg.italic_keyword}, -- For keywords that don't fall in previous categories.
         TSAnnotation = {fg = orange}, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
         TSRepeat = {fg = c.blue, style = cfg.italic_keyword}, -- For keywords related to loops.
         TSAttribute = {fg = cyan}, -- (unstable) TODO: docs
         TSKeywordFunction = {fg = c.blue, style = cfg.italic_keyword}, -- For keywords used to define a fuction.
         TSCharacter = {fg = orange}, -- For characters.
-        TSBoolean = {fg = c.orange, bg = c.none, style = cfg.italic_boolean}, -- true or false
-        TSFunction = {fg = c.purple, style = cfg.italic_function .. cfg.bold}, -- For fuction (calls and definitions).
+        ['@boolean'] = {fg = c.orange, bg = c.none, style = cfg.italic_boolean}, -- true or false
+        ['@function'] = {fg = c.purple, style = cfg.italic_function .. cfg.bold}, -- For fuction (calls and definitions).
         TSMethod = {fg = c.purple, style = cfg.italic_function}, -- For method calls and definitions.
         TSConstructor = {fg = red}, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
         TSFuncBuiltin = {fg = c.orange, style = cfg.italic_function}, -- For builtin functions: `table.insert` in Lua.
         TSConstant = {fg = violet}, -- For constants
-        TSVariable = {fg = c.light_pink, style = cfg.italic_variable}, -- Any variable name that does not have another highlight.
+        ['@variable'] = {fg = c.light_pink, style = cfg.italic_variable}, -- Any variable name that does not have another highlight.
         TSVariableBuiltin = {fg = c.cyan, style = cfg.italic_variable}, -- Variable names that are defined by the languages, like `this` or `self`.        TSConstBuiltin = {fg = orange}, -- For constant that are built in the language: `nil` in Lua.
         TSConstMacro = {fg = c.cyan}, -- For constants that are defined by macros: `NULL` in C.
         TSError = {fg = c.red}, -- For syntax/parser errors.
@@ -217,8 +218,8 @@ local function set_groups()
         TSString = {fg = c.green}, -- For strings.
         TSStringRegex = {fg = c.blue}, -- For regexes.
         TSStringEscape = {fg = c.orange}, -- For escape characters within a string.
-        TSSymbol = {fg = c.orange}, -- For identifiers referring to symbols or atoms.
-        TSType = {fg = c.orange}, -- For types.
+        ['@symbol'] = {fg = c.orange}, -- For identifiers referring to symbols or atoms.
+        ['@type'] = {fg = c.orange}, -- For types.
         TSTypeBuiltin = {fg = c.cyan}, -- For builtin types.
         TSTag = {fg = c.blue}, -- Tags like html tag names.
         TSTagDelimiter = {fg = c.blue}, -- Tag delimiter like `<` `>` `/`
